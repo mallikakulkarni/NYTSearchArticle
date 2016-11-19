@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvFilterDate"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="14dp"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/date_picker_border" />
+
+    <ImageButton
+        android:id="@+id/imgBtnDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/selectdate"
+        android:cropToPadding="true"
+        android:onClick="selectDate"
+        android:src="@mipmap/ic_datepicker"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tvFilterDate"
+        android:layout_toEndOf="@+id/tvFilterDate"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="24dp" />
+
+    <Spinner
+        android:id="@+id/spinnerOrderFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/order_array"
+        android:prompt="@string/order_by"
+        android:layout_below="@+id/tvFilterDate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvCheckBoxes"
+        android:layout_below="@+id/spinnerOrderFilter"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp">
+
+        <CheckBox
+            android:text="Sports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbSports"
+            android:checked="false"/>
+        <CheckBox
+            android:text="Arts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbArts"
+            android:layout_below="@+id/cbSports"
+            android:checked="false"/>
+        <CheckBox
+            android:text="Fashion &amp; Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbFashion"
+            android:layout_below="@+id/cbArts"
+            android:checked="false"/>
+    </LinearLayout>
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFilterSubmit"
+        android:layout_below="@+id/lvCheckBoxes"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:onClick="onFilterSubmit"/>
+
+
+</RelativeLayout>
